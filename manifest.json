@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Bunny Walk",
+  "version": "1.0.0",
+  "description": "A tiny pixel rabbit that wanders along the bottom of your pages.",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Bunny Walk",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/rabbit.png", "assets/rabbit-idle.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
